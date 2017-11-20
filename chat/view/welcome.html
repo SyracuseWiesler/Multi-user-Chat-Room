@@ -1,0 +1,70 @@
+<div class="container-fluid" page-height-watch>
+    <div id="myCarousel" class="carousel slide" carousel-play>
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="pic pic1"></div>
+            </div>
+            <div class="item">
+                <div class="pic pic2"></div>
+            </div>
+            <div class="item">
+                <div class="pic pic3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="curtain">
+        <h1>Communication Makes Life Better</h1>
+    </div>
+    <div class="container box img-rounded">
+        <form role="form" name="myForm" novalidate>
+            <ul class="nav nav-tabs">
+                <li ng-class="atJoin ? 'active' : ''" ng-click="atJoin = true"><a href><strong>Join</strong></a></li>
+                <li ng-class="atJoin ? '' : 'active'" ng-click="atJoin = false"><a href><strong>Create a Room</strong></a></li>
+            </ul>
+            <div class="form-group">
+                    <div class="row">
+                        <label for="nickname" class="col-md-3 control-label">Nickname: </label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="nickname" ng-model="nickname" autocomplete="off" maxlength="16">
+                            <div class="row" style="height: 15px;">
+                                <span class="warning" ng-show="! nicknameValid"><strong>Nickname [{{nickname}}] exists, try another one</strong></span>
+                                <span class="warning" ng-show="! nicknameValid2"><strong>Nickname cannot not be only one _ only</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                <div class="join" ng-show="atJoin">
+                    <div class="row">
+                        <label for="rooms" class="col-md-3 control-label">Room: </label>
+                        <div class="col-md-9">
+                            <select name="rooms" id="rooms" class="form-control" required ng-model="selectedRoomName">
+                                <option ng-model="x" ng-repeat="(x, y) in rooms track by $index">{{x}}</option>
+                            </select>
+                            <div class="row" style="height: 15px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary col-md-12" ng-disabled="length === 0 || ! nicknameValid" ng-click="join()">Join</button>
+                        <span class="warning" ng-show="length === 0"><strong>No rooms to join, please create one</strong></span>
+                    </div>
+                </div>
+                <div class="create" ng-hide="atJoin">
+                    <div class="row">
+                        <label for="room" class="col-md-3 control-label">Room: </label>
+                        <div class="col-md-9">
+                            <input type="text" name="roomname" class="form-control" id="room" ng-model="myRoomName" autocomplete="off" maxlength="16" required>
+                            <div class="row" style="height: 15px;">
+                                <span class="warning" ng-show="! roomNameValid"><strong>Room name [{{myRoomName}}] exists, try another one</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary col-md-12" ng-disabled="myForm.roomname.$invalid || ! nicknameValid || ! roomNameValid" ng-click="create()">Create & Join</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>

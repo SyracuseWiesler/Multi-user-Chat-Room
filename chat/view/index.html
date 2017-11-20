@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script/app.js" type="text/javascript"></script>
+    <script src="script/factory.js" type="text/javascript"></script>
+    <script src="script/ctrlWel.js" type="text/javascript"></script>
+    <script src="script/ctrlRoom.js" type="text/javascript"></script>
+</head>
+<body ng-app="myApp">
+    <ng-view></ng-view>
+    <!--<script>-->
+        <!--jQuery(window).on('beforeunload', function() {-->
+            <!--console.log("haha");-->
+            <!--jQuery.ajax({-->
+                <!--method: "GET",-->
+                <!--url: "http://localhost:8888/xxx",-->
+            <!--});-->
+            <!--return "ssss";-->
+        <!--});-->
+    <!--</script>-->
+
+    <!--<div class="container" page-height-watch>-->
+        <!--<div class="row" id="loungeName">-->
+            <!--<h3 class="col-md-2 col-md-offset-1">Lounge 1</h3>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-8 col-md-offset-1 img-rounded" id="chatbox" style="height: 400px; background: grey">-->
+                <!--<p ng-repeat="x in contents track by $index">{{x}}</p>-->
+            <!--</div>-->
+            <!--<div class="col-md-2 img-rounded" id="loungeList" style="height: 400px; background: dimgrey"></div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<textarea class="img-rounded col-md-9 col-md-offset-1" cols="30" rows="3" autofocus placeholder="ALT + S to send out your message ..." ng-model="message" ng-keydown="send($event)"></textarea>-->
+            <!--<div class="col-md-1 group">-->
+                <!--<button class="btn btn-success col-md-12 send" ng-click="send($event)">Send</button>-->
+                <!--<button class="btn btn-primary col-md-12" ng-click="clear()">Clear</button>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-10 col-md-offset-1 instructions">-->
+                <!--<p><strong>Chat Commands: </strong></p>-->
+                <!--<ul>-->
+                    <!--<li><strong>Change Nickname: <code>/nick [username]</code></strong></li>-->
+                    <!--<li><strong>Join/Create room: <code>/join [room name]</code></strong></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</body>
+</html>
